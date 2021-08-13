@@ -1,21 +1,28 @@
 cmake_minimum_required(VERSION 3.10)
 
-# set the project name and version
-project(Tutorial VERSION 1.0)
+set(CMAKE_EXPORT_COMPILE_COMMANDS True)
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# configure a header file to pass some of the CMake settings
-# to the source code
+# Get the latest abbreviated commit hash of the working branch
+execute_process(
+  COMMAND git log -1 --format=%h
+  WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
+  OUTPUT_VARIABLE GIT_HASH
+  OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+# set the project name and version
+project(Tutorial VERSION 1.0)
+set(Tutorial_VERSION_PATCH g${GIT_HASH})
+
+# configure a header file to pass some of the CMake settings to the source code
 configure_file(TutorialConfig.h.in TutorialConfig.h)
 
 # add the executable
 add_executable(Tutorial tutorial.cxx)
 
-# add the binary tree to the search path for include files
-# so that we will find TutorialConfig.h
-target_include_directories(Tutorial PUBLIC
-                           "${PROJECT_BINARY_DIR}"
-                           )
+# add the binary tree to the search path for include files so that we will find
+# TutorialConfig.h
+target_include_directories(Tutorial PUBLIC "${PROJECT_BINARY_DIR}")
