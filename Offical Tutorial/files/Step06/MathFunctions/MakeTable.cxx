@@ -3,8 +3,7 @@
 #include <fstream>
 #include <iostream>
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char *argv[]) {
   // make sure we have enough arguments
   if (argc < 2) {
     return 1;
