@@ -1,13 +1,11 @@
+#include <cmath>
 #include <iostream>
 
 #include "MathFunctions.h"
-
-// include the generated table
 #include "Table.h"
 
 // a hack square root calculation using simple operations
-double mysqrt(double x)
-{
+double mysqrt(double x) {
   if (x <= 0) {
     return 0;
   }
