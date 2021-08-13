@@ -24,7 +24,7 @@
 2. `VERSION` 变量是大小写敏感的, 参见 [此处](https://stackoverflow.com/a/61814315/13206417)
 
 3. 可以嵌入 Git 的 commit id 作为版本号的一部分:
-   参见 [此处](https://jonathanhamberg.com/post/cmake-embedding-git-hash/)
+   参见 [此处](https://jonathanhamberg.com/post/cmake-embedding-git-hash/) 以及本仓库中参照其做出的修改.
 
 4. 可以通过 `set(CMAKE_EXPORT_COMPILE_COMMANDS True) `, 来导出 `compile_commands.json`
 
