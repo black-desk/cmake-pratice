@@ -23,8 +23,14 @@
 
 2. `VERSION` 变量是大小写敏感的, 参见 [此处](https://stackoverflow.com/a/61814315/13206417)
 
-3. 可以嵌入 Git 的 commit id 作为版本号的一部分:
-   参见 [此处](https://jonathanhamberg.com/post/cmake-embedding-git-hash/) 以及本仓库中参照其做出的修改.
+   > Inside CMake commands all options have **case-sensitive** names, which are usually *upper-case*. So, it is incorrectly to write `Version` instead of `VERSION`.
 
-4. 可以通过 `set(CMAKE_EXPORT_COMPILE_COMMANDS True) `, 来导出 `compile_commands.json`
+3. 可以嵌入 Git 的 commit id 作为版本号的一部分:
+   参见 [此处](https://jonathanhamberg.com/post/cmake-embedding-git-hash/) 以及本仓库中参照其做出的 [修改](https://github.com/black-desk/cmake-pratice/commit/a91f20e2906b77e50eeed0ec82655244aabf9362).
+
+   ```bash
+   > git show a91f20e2906b77e50eeed0ec82655244aabf9362
+   
+4. 可以通过 `set(CMAKE_EXPORT_COMPILE_COMMANDS True) `, 来导出 `compile_commands.json`.
+   当然 `cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1` 也有一样的效果.
 
