@@ -1,7 +1,2 @@
-CMakeCache.txt
-CMakeFiles
-Makefile
-Tutorial
-TutorialConfig.h
-cmake_install.cmake
-compile_commands.json
+.vim
+build
