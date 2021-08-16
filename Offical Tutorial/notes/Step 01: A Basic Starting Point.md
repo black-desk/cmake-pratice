@@ -2,7 +2,7 @@
 
 1. 一定要将 `target_include_directories(Tutorial PUBLIC "${PROJECT_BINARY_DIR}")` 放在 `add_executable(Tutorial tutorial.cxx)` 的后面, 不然会报出如下错误:
 
-   ````
+   ```
    ❯ cmake .
    -- The C compiler identification is GNU 8.3.0
    -- The CXX compiler identification is GNU 8.3.0
@@ -19,7 +19,7 @@
    CMake Error at CMakeLists.txt:8 (target_include_directories):
      Cannot specify include directories for target "Tutorial" which is not built
      by this project.
-   ````
+   ```
 
 2. `VERSION` 变量是大小写敏感的, 参见 [此处](https://stackoverflow.com/a/61814315/13206417)
 
