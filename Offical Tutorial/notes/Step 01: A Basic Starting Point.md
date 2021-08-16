@@ -30,7 +30,8 @@
 
    ```bash
    > git show a91f20e2906b77e50eeed0ec82655244aabf9362
-   
+   ```
+
 4. 可以通过 `set(CMAKE_EXPORT_COMPILE_COMMANDS True) `, 来导出 `compile_commands.json`.
    当然 `cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1` 也有一样的效果.
 
